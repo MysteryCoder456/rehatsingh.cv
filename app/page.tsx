@@ -7,10 +7,10 @@ export default function Home() {
 
   return (
     <main className="h-full flex flex-col gap-8 py-8">
-      <section className="flex flex-row justify-between items-center">
-        <div className="flex flex-col gap-2 max-w-[50%]">
+      <section className="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
+        <div className="flex flex-col gap-2 max-w-[50%] text-center md:text-start">
           <h1>Rehatbir Singh</h1>
-          <h3 className="text-muted-foreground text-start">
+          <h3 className="text-muted-foreground">
             Full-stack developer with a focus in systems architecture
           </h3>
         </div>
