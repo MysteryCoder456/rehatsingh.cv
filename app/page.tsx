@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const photoSize = 300;
+  const universityWebsite = "https://www.wisc.edu/";
 
   return (
     <main className="h-full flex flex-col gap-8 py-8">
@@ -24,7 +26,14 @@ export default function Home() {
 
       <section>
         <h1>About Me</h1>
-        <p>bla bla bla</p>
+        <p>
+          I'm a student at{" "}
+          <Link href={universityWebsite} prefetch={false} target="_blank">
+            UW-Madison
+          </Link>{" "}
+          double majoring in Computer Science and Data Science, and I love
+          creating software that connects people.
+        </p>
       </section>
     </main>
   );
