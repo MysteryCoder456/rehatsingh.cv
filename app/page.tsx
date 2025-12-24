@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Timeline, TimelineItem } from "@/components/timeline";
-import Link from "next/link";
 
 export default function Home() {
   const photoSize = 300;
@@ -25,14 +24,25 @@ export default function Home() {
       </section>
 
       <section>
-        <h1 className="mb-2">What is this?</h1>
-        <p>
-          I'm currently revamping my entire personal site. Click{" "}
-          <Link href="https://old.rehatsingh.cv" target="_blank">
-            here
-          </Link>{" "}
-          to see my old one.
-        </p>
+        <h1 className="mb-2">About Me</h1>
+
+        <Timeline>
+          <TimelineItem title="2018" subtitle="7th Grade" position="first">
+            Began learning how to code
+          </TimelineItem>
+          <TimelineItem title="2020">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+            faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
+            pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
+            tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+            Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut
+            hendrerit semper vel class aptent taciti sociosqu. Ad litora
+            torquent per conubia nostra inceptos himenaeos.
+          </TimelineItem>
+          <TimelineItem title="2024" subtitle="New Beginnings" position="last">
+            Went to university
+          </TimelineItem>
+        </Timeline>
       </section>
     </main>
   );
