@@ -27,10 +27,10 @@ export default function Home() {
         <h1 className="mb-2">About Me</h1>
 
         <Timeline>
-          <TimelineItem position="first">
+          <TimelineItem title="2018" subtitle="7th Grade" position="first">
             Began learning how to code
           </TimelineItem>
-          <TimelineItem>
+          <TimelineItem title="2020">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
             faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
             pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
@@ -39,7 +39,9 @@ export default function Home() {
             hendrerit semper vel class aptent taciti sociosqu. Ad litora
             torquent per conubia nostra inceptos himenaeos.
           </TimelineItem>
-          <TimelineItem position="last">Went to university</TimelineItem>
+          <TimelineItem title="2024" subtitle="New Beginnings" position="last">
+            Went to university
+          </TimelineItem>
         </Timeline>
       </section>
     </main>
