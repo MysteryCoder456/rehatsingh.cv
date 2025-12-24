@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Timeline, TimelineItem } from "@/components/timeline";
 
 export default function Home() {
   const photoSize = 300;
-  const universityWebsite = "https://www.wisc.edu/";
 
   return (
     <main className="h-full flex flex-col gap-8 py-8">
@@ -25,15 +24,23 @@ export default function Home() {
       </section>
 
       <section>
-        <h1>About Me</h1>
-        <p>
-          I'm a student at{" "}
-          <Link href={universityWebsite} prefetch={false} target="_blank">
-            UW-Madison
-          </Link>{" "}
-          double majoring in Computer Science and Data Science, and I love
-          creating software that connects people.
-        </p>
+        <h1 className="mb-2">About Me</h1>
+
+        <Timeline>
+          <TimelineItem position="first">
+            Began learning how to code
+          </TimelineItem>
+          <TimelineItem>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+            faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
+            pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
+            tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+            Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut
+            hendrerit semper vel class aptent taciti sociosqu. Ad litora
+            torquent per conubia nostra inceptos himenaeos.
+          </TimelineItem>
+          <TimelineItem position="last">Went to university</TimelineItem>
+        </Timeline>
       </section>
     </main>
   );
