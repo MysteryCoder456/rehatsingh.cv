@@ -5,7 +5,7 @@ export default function Home() {
   const photoSize = 300;
 
   return (
-    <main className="h-full flex flex-col gap-8 py-8">
+    <main className="h-full flex flex-col gap-8">
       <section className="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
         <div className="flex flex-col gap-2 max-w-[50%] text-center md:text-start">
           <h1>Rehatbir Singh</h1>
@@ -19,7 +19,7 @@ export default function Home() {
           alt="Picture of Rehatbir"
           width={photoSize}
           height={photoSize}
-          className="border-4 rounded-full"
+          className="border-4 border-secondary rounded-full"
         />
       </section>
 
