@@ -26,9 +26,18 @@ export default function Home() {
       <section>
         <h1 className="mb-2">About Me</h1>
 
+        {/* TODO: Drop-down to see related projects for each era. */}
         <Timeline>
-          <TimelineItem title="2018" subtitle="7th Grade" position="first">
-            Began learning how to code
+          <TimelineItem
+            title="Learning to make things exist"
+            subtitle="7th grade - 2018"
+            position="first"
+          >
+            <p>
+              Programming had my curiosity when I learnt QBasic in middle
+              school. But it got my attention when I realized it could{" "}
+              <i>do real things</i>, not just print text on a screen.
+            </p>
           </TimelineItem>
           <TimelineItem title="2020">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
