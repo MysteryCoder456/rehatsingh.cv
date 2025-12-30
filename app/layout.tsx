@@ -37,7 +37,7 @@ const navBarItems: { name: string; href: string; newTab?: boolean }[] = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/MysteryCoder456/rehatsingh.cv",
+    href: "https://github.com/MysteryCoder456",
     newTab: true,
   },
 ];
@@ -63,14 +63,23 @@ export default function RootLayout({
           <NavigationMenuList className="flex-wrap w-screen gap-4">
             {navBarItems.map((item) => (
               <NavigationMenuItem key={item.name}>
-                <NavigationMenuLink asChild>
-                  <Link
+                {item.href.startsWith("http") ? (
+                  <NavigationMenuLink
                     href={item.href}
                     target={item.newTab ? "_blank" : "_self"}
                   >
                     {item.name}
-                  </Link>
-                </NavigationMenuLink>
+                  </NavigationMenuLink>
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href={item.href}
+                      target={item.newTab ? "_blank" : "_self"}
+                    >
+                      {item.name}
+                    </Link>
+                  </NavigationMenuLink>
+                )}
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
