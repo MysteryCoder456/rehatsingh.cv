@@ -12,7 +12,7 @@ export function Timeline({ children }: { children: React.ReactNode }) {
 }
 
 export type TimelineItemProps = {
-  title: string;
+  title?: string;
   subtitle?: string;
   position?: "first" | "last";
   children: React.ReactNode;
@@ -39,10 +39,12 @@ export function TimelineItem({
       </div>
 
       <Card className="flex-1 my-6">
-        <CardHeader>
-          <CardTitle>{title}</CardTitle>
-          {subtitle && <CardDescription>{subtitle}</CardDescription>}
-        </CardHeader>
+        {(title || subtitle) && (
+          <CardHeader>
+            {title && <CardTitle>{title}</CardTitle>}
+            {subtitle && <CardDescription>{subtitle}</CardDescription>}
+          </CardHeader>
+        )}
         <CardContent>{children}</CardContent>
       </Card>
     </div>

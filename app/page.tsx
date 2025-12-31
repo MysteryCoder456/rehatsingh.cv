@@ -30,26 +30,33 @@ export default function Home() {
         <Timeline>
           <TimelineItem
             title="Learning to make things exist"
-            subtitle="7th grade - 2018"
+            subtitle="Middle School"
             position="first"
           >
             <p>
               Programming had my curiosity when I learnt QBasic in middle
               school. But it got my attention when I realized it could{" "}
-              <i>do real things</i>, not just print text on a screen.
+              <i>do real things</i>, not just print text on a screen. Most of my
+              first projects were remakes of games I enjoyed playing when I was
+              younger.
             </p>
           </TimelineItem>
-          <TimelineItem title="2020">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
-            faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi
-            pretium tellus duis convallis. Tempus leo eu aenean sed diam urna
-            tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
-            Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut
-            hendrerit semper vel class aptent taciti sociosqu. Ad litora
-            torquent per conubia nostra inceptos himenaeos.
+
+          <TimelineItem title="Making for the world" subtitle="High School">
+            <p>
+              I began seeking validation. Whether it was in the form of user
+              feedback from projects I'd shipped, things I'd built for
+              competitions, or cold hard cash; I had subconsciously internalized
+              the feedback-iteration loop as a developer.
+            </p>
           </TimelineItem>
-          <TimelineItem title="2024" subtitle="New Beginnings" position="last">
-            Went to university
+
+          <TimelineItem title="TODO" subtitle="TODO">
+            <p>TODO</p>
+          </TimelineItem>
+
+          <TimelineItem title="TODO" subtitle="TODO" position="last">
+            <p>TODO</p>
           </TimelineItem>
         </Timeline>
       </section>
