@@ -42,7 +42,7 @@ export default function Home() {
             </p>
           </TimelineItem>
 
-          <TimelineItem title="Making for the world" subtitle="High School">
+          <TimelineItem title="Developing for the world" subtitle="High School">
             <p>
               I began seeking validation. Whether it was in the form of user
               feedback from projects I'd shipped, things I'd built for
@@ -51,11 +51,20 @@ export default function Home() {
             </p>
           </TimelineItem>
 
-          <TimelineItem title="TODO" subtitle="TODO">
-            <p>TODO</p>
+          <TimelineItem
+            title="Intersection of disciplines"
+            subtitle="Late High School & Early College"
+          >
+            <p>
+              As I learnt more about the world, my interests shifted. I began to
+              view code as a facilitator for other fields, a tool to amplify
+              ideas that existed outside the Computer Science sphere. This
+              helped me explore fresh ideas that I previously would not have
+              fully appreciated.
+            </p>
           </TimelineItem>
 
-          <TimelineItem title="TODO" subtitle="TODO" position="last">
+          <TimelineItem title="Product Driven" subtitle="Now" position="last">
             <p>TODO</p>
           </TimelineItem>
         </Timeline>
