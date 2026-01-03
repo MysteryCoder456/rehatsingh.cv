@@ -59,7 +59,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationMenu className="fixed left-1/2 -translate-x-1/2 py-3 bg-background border-b border-b-secondary">
+        <NavigationMenu className="fixed left-1/2 -translate-x-1/2 py-3 bg-background border-b border-b-secondary z-50">
           <NavigationMenuList className="flex-wrap w-screen gap-4">
             {navBarItems.map((item) => (
               <NavigationMenuItem key={item.name}>
