@@ -45,9 +45,9 @@ export default function Home() {
           <TimelineItem title="Developing for the world" subtitle="High School">
             <p>
               I began seeking validation. Whether it was in the form of user
-              feedback from projects I'd shipped, things I'd built for
-              competitions, or cold hard cash; I had subconsciously internalized
-              the feedback-iteration loop as a developer.
+              feedback from projects I'd shipped, prizes from things I'd built
+              for competitions, or cold hard cash; I had subconsciously
+              internalized the feedback-iteration loop as a developer.
             </p>
           </TimelineItem>
 
@@ -58,13 +58,17 @@ export default function Home() {
             <p>
               As I learnt more about the world, my interests shifted. I began to
               view code as a facilitator for other fields, a tool to amplify
-              ideas that existed outside the Computer Science sphere. This
-              helped me explore fresh ideas that I previously would not have
-              fully appreciated.
+              ideas that exist outside the Computer Science sphere. This helped
+              me explore fresh ideas that I previously would not have fully
+              appreciated.
             </p>
           </TimelineItem>
 
-          <TimelineItem title="Product Driven" subtitle="Now" position="last">
+          <TimelineItem
+            title="Product driven mindset"
+            subtitle="Present"
+            position="last"
+          >
             <p>TODO</p>
           </TimelineItem>
         </Timeline>
