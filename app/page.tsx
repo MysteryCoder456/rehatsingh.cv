@@ -29,47 +29,53 @@ export default function Home() {
         {/* TODO: Drop-down to see related projects for each era. */}
         <Timeline>
           <TimelineItem
-            title="Learning to make things exist"
+            title="Learning to Make Things Exist"
             subtitle="Middle School"
             position="first"
           >
             <p>
-              Programming had my curiosity when I learnt QBasic in middle
-              school. But it got my attention when I realized it could{" "}
-              <i>do real things</i>, not just print text on a screen. Most of my
+              Programming sparked my curiosity when I learned QBasic in middle
+              school. But it truly got my attention when I realized it could{" "}
+              <b>do real things</b>, not just print text on a screen. Most of my
               first projects were remakes of games I enjoyed playing when I was
               younger.
             </p>
           </TimelineItem>
 
-          <TimelineItem title="Developing for the world" subtitle="High School">
+          <TimelineItem title="Developing for the World" subtitle="High School">
             <p>
               I began seeking validation. Whether it was in the form of user
               feedback from projects I'd shipped, prizes from things I'd built
               for competitions, or cold hard cash; I had subconsciously
-              internalized the feedback-iteration loop as a developer.
+              internalized the <b>feedback-iteration loop</b> as a developer.
             </p>
           </TimelineItem>
 
           <TimelineItem
-            title="Intersection of disciplines"
+            title="Intersection of Disciplines"
             subtitle="Late High School & Early College"
           >
             <p>
               As I learnt more about the world, my interests shifted. I began to
-              view code as a facilitator for other fields, a tool to amplify
-              ideas that exist outside the Computer Science sphere. This helped
-              me explore fresh ideas that I previously would not have fully
-              appreciated.
+              view code as a facilitator for other fields, a tool to{" "}
+              <b>amplify ideas</b> that exist outside the Computer Science
+              sphere. This helped me explore fresh ideas that I previously would
+              not have fully appreciated.
             </p>
           </TimelineItem>
 
           <TimelineItem
-            title="Product driven mindset"
+            title="Product-Driven Mindset"
             subtitle="Present"
             position="last"
           >
-            <p>TODO</p>
+            <p>
+              Over the years, I went from creating software purely for the sake
+              of writing code to developing helpful products that solve real
+              problems. Of course, I still enjoy the development journey and all
+              the decisions that come with it, but my primary motivator is now
+              the <b>value</b> my work brings to people.
+            </p>
           </TimelineItem>
         </Timeline>
       </section>
