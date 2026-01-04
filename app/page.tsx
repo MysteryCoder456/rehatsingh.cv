@@ -1,6 +1,11 @@
 import { AlertCircleIcon } from "lucide-react";
 import Image from "next/image";
-import { Timeline, TimelineItem } from "@/components/timeline";
+import {
+  Timeline,
+  TimelineActivity,
+  TimelineActivityList,
+  TimelineItem,
+} from "@/components/timeline";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function Home() {
@@ -47,7 +52,6 @@ export default function Home() {
       <section>
         <h1 className="mb-2">About Me</h1>
 
-        {/* TODO: Drop-down to see related projects for each era. */}
         <Timeline>
           <TimelineItem
             title="Learning to Make Things Exist"
@@ -61,6 +65,18 @@ export default function Home() {
               first projects were remakes of games I enjoyed playing when I was
               younger.
             </p>
+
+            {/* TODO: Populate with real data */}
+            <TimelineActivityList>
+              <TimelineActivity
+                title="meow"
+                description="cat kitty cat cat kitty cat cat"
+              />
+              <TimelineActivity title="meow" />
+              <TimelineActivity title="meow" />
+              <TimelineActivity title="meow" />
+              <TimelineActivity title="meow" />
+            </TimelineActivityList>
           </TimelineItem>
 
           <TimelineItem title="Developing for the World" subtitle="High School">

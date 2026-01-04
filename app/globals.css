@@ -141,7 +141,7 @@
   }
 
   p {
-    @apply leading-7 [&:not(:first-child)]:mt-6;
+    @apply leading-7 text-base [&:not(:first-child)]:mt-6;
   }
 
   blockquote {
@@ -149,6 +149,6 @@
   }
 
   a {
-    @apply text-accent-foreground font-semibold;
+    @apply text-inherit italic hover:underline;
   }
 }
