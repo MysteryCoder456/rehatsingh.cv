@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         <Image
-          src="/pingy.png"
+          src="/images/pingy.png"
           alt="Picture of Rehatbir"
           width={photoSize}
           height={photoSize}

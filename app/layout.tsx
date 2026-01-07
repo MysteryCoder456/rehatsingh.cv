@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 import Script from "next/script";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +22,34 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rehatbir Singh",
-  description: "Full-stack developer, systems architect, and life enthusiast.",
+  description: "Student at UW-Madison, fullstack engineer, and avid learner.",
+  authors: [{ name: "Rehatbir Singh" }],
+  keywords: [
+    "Rehatbir Singh",
+    "Programmer",
+    "Fullstack",
+    "Backend",
+    "Student",
+    "Computer Science",
+  ],
+  openGraph: {
+    type: "website",
+    url: "https://rehatsingh.cv",
+    title: "Rehatbir Singh",
+    description: "Student at UW-Madison, fullstack engineer, and avid learner.",
+    images: { url: "https://rehatsingh.cv/images/pingy.png" },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rehatbir Singh",
+    description: "Student at UW-Madison, fullstack engineer, and avid learner.",
+    images: { url: "https://rehatsingh.cv/images/pingy.png" },
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 const navBarItems: { name: string; href: string; newTab?: boolean }[] = [
@@ -55,6 +80,7 @@ export default function RootLayout({
           data-website-id="6d05defe-708b-41d7-91c1-40a55ec94f3d"
           strategy="afterInteractive"
         />
+        <link rel="canonical" href="https://rehatsingh.cv" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
