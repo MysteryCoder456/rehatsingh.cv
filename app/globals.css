@@ -141,7 +141,8 @@
   }
 
   p {
-    @apply leading-7 text-base [&:not(:first-child)]:mt-6;
+    @apply leading-7 text-base;
+    /* [&:not(:first-child)]:mt-6; */
   }
 
   blockquote {
@@ -149,6 +150,14 @@
   }
 
   a {
-    @apply text-inherit italic hover:underline;
+    @apply text-inherit underline decoration-dotted hover:decoration-solid;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
   }
 }

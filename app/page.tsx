@@ -1,5 +1,6 @@
 import { AlertCircleIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Timeline,
   TimelineActivity,
@@ -35,9 +36,15 @@ export default function Home() {
       <section className="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
         <div className="flex flex-col gap-2 max-w-[50%] text-center md:text-start">
           <h1>Rehatbir Singh</h1>
-          <h3 className="text-muted-foreground">
-            Full-stack developer with a focus in systems architecture
-          </h3>
+          <ul className="text-muted-foreground font-medium text-lg ps-4">
+            <li>
+              Student @ <a href="https://wisc.edu">UW-Madison</a>
+            </li>
+            <li>Fullstack engineer with a focus in backend systems</li>
+            <li>
+              Currently working on <Link href="/coming-soon">Flux</Link>
+            </li>
+          </ul>
         </div>
 
         <Image
@@ -50,7 +57,10 @@ export default function Home() {
       </section>
 
       <section>
-        <h1 className="mb-2">About Me</h1>
+        <h1 className="mb-2">My Story</h1>
+        <p className="text-muted-foreground">
+          How I've evolved as a developer over the years.
+        </p>
 
         <Timeline>
           <TimelineItem

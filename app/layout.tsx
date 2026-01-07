@@ -67,7 +67,7 @@ export default function RootLayout({
                   <NavigationMenuLink
                     href={item.href}
                     target={item.newTab ? "_blank" : "_self"}
-                    className="font-semibold not-italic hover:no-underline"
+                    className="font-semibold not-italic no-underline"
                   >
                     {item.name}
                   </NavigationMenuLink>
@@ -76,7 +76,7 @@ export default function RootLayout({
                     <Link
                       href={item.href}
                       target={item.newTab ? "_blank" : "_self"}
-                      className="font-semibold not-italic hover:no-underline"
+                      className="font-semibold not-italic no-underline"
                     >
                       {item.name}
                     </Link>

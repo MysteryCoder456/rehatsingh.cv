@@ -1,10 +1,4 @@
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   Card,
   CardContent,
   CardDescription,
@@ -33,7 +27,7 @@ export function TimelineItem({
 }: TimelineItemProps) {
   return (
     <div className="flex flex-row">
-      <div className="flex-none flex flex-col justify-center relative items-center mx-8">
+      <div className="flex-none flex flex-col justify-center relative items-center ms-4 mx-8">
         <div
           className={cn(
             "w-1.5 bg-secondary-foreground absolute h-full z-0",
@@ -64,16 +58,9 @@ export function TimelineActivityList({
   children: React.ReactNode;
 }) {
   return (
-    <Accordion type="single" collapsible className="pt-4">
-      <AccordionItem value="activities">
-        <AccordionTrigger>Show more</AccordionTrigger>
-        <AccordionContent>
-          <div className="flex flex-row gap-4 pb-4 overflow-x-auto">
-            {children}
-          </div>
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+    <div className="flex flex-row gap-4 pt-6 py-3 overflow-x-auto">
+      {children}
+    </div>
   );
 }
 
