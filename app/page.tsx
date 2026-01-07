@@ -1,6 +1,6 @@
 import { AlertCircleIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { ProjectCard } from "@/components/projects";
 import {
   Timeline,
   TimelineActivity,
@@ -36,13 +36,16 @@ export default function Home() {
       <section className="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
         <div className="flex flex-col gap-2 max-w-[50%] text-center md:text-start">
           <h1>Rehatbir Singh</h1>
-          <ul className="text-muted-foreground font-medium text-lg ps-4">
+          <ul className="text-muted-foreground font-medium text-lg">
             <li>
               Student @ <a href="https://wisc.edu">UW-Madison</a>
             </li>
             <li>Fullstack engineer with a focus in backend systems</li>
             <li>
-              Currently working on <Link href="/coming-soon">Flux</Link>
+              Currently working on{" "}
+              <a href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564">
+                Flux
+              </a>
             </li>
           </ul>
         </div>
@@ -54,6 +57,25 @@ export default function Home() {
           height={photoSize}
           className="border-4 border-secondary rounded-full"
         />
+      </section>
+
+      <section>
+        <h1 className="mb-4">Featured Projects</h1>
+
+        <div className="grid sm:grid-cols-2 grid-cols-1 lg:gap-8 gap-4">
+          <ProjectCard
+            title="Flux"
+            description="Networking for student entrepreneurs"
+            imageSrc="/images/projects/flux.png"
+            href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564"
+          />
+          <ProjectCard
+            title="FreeVoIP"
+            description="Decentralized peer-2-peer video calling"
+            imageSrc="/images/projects/freevoip.png"
+            href="https://github.com/MysteryCoder456/free-voip"
+          />
+        </div>
       </section>
 
       <section>
@@ -75,18 +97,6 @@ export default function Home() {
               first projects were remakes of games I enjoyed playing when I was
               younger.
             </p>
-
-            {/* TODO: Populate with real data */}
-            <TimelineActivityList>
-              <TimelineActivity
-                title="meow"
-                description="cat kitty cat cat kitty cat cat"
-              />
-              <TimelineActivity title="meow" />
-              <TimelineActivity title="meow" />
-              <TimelineActivity title="meow" />
-              <TimelineActivity title="meow" />
-            </TimelineActivityList>
           </TimelineItem>
 
           <TimelineItem title="Developing for the World" subtitle="High School">
