@@ -62,6 +62,7 @@ export default function Home() {
       <section>
         <h1 className="mb-4">Featured Projects</h1>
 
+        {/* TODO: make dynamic */}
         <div className="grid sm:grid-cols-2 grid-cols-1 lg:gap-8 gap-4">
           <ProjectCard
             title="Flux"
@@ -133,6 +134,15 @@ export default function Home() {
               the decisions that come with it, but my primary motivator is now
               the <b>value</b> my work brings to people.
             </p>
+
+            {/* TODO: make dynamic */}
+            <TimelineActivityList>
+              <TimelineActivity title="Flux" description="TODO" />
+              <TimelineActivity title="Mind Merge" description="TODO" />
+              <TimelineActivity title="FreeVoIP" description="TODO" />
+              <TimelineActivity title="Red Coral" description="TODO" />
+              <TimelineActivity title="Drippr" description="TODO" />
+            </TimelineActivityList>
           </TimelineItem>
         </Timeline>
       </section>

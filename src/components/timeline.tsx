@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -6,7 +7,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Skeleton } from "./ui/skeleton";
 
 export function Timeline({ children }: { children: React.ReactNode }) {
   return <div className="flex flex-col">{children}</div>;
@@ -64,16 +64,27 @@ export function TimelineActivityList({
   );
 }
 
-export type TimelineActivityProps = { title: string; description?: string };
+export type TimelineActivityProps = {
+  title: string;
+  description?: string;
+};
 
 export function TimelineActivity({
   title,
   description,
 }: TimelineActivityProps) {
+  const imageFilename = `${title.toLowerCase().replace(/\s+/, "-")}.png`;
+  const imageSrc = `/images/story/${imageFilename}`;
+
   return (
     <div className="text-sm">
-      {/* TODO: These will be images/illustrations of my project/experience */}
-      <Skeleton className="w-64 h-36" />
+      <Image
+        src={imageSrc}
+        width={1280}
+        height={720}
+        alt={`An image showcasing ${title}`}
+        className="rounded-lg max-w-64 aspect-video bg-secondary text-center"
+      />
 
       <div className="mt-2">
         <span>{title}</span>
