@@ -36,7 +36,7 @@ export default function Home() {
       <section className="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
         <div className="flex flex-col gap-2 max-w-[50%] text-center md:text-start">
           <h1>Rehatbir Singh</h1>
-          <ul className="text-muted-foreground font-medium text-lg">
+          <ul className="text-muted-foreground font-medium text-lg list-inside">
             <li>
               Student @ <a href="https://wisc.edu">UW-Madison</a>
             </li>
@@ -57,6 +57,85 @@ export default function Home() {
           height={photoSize}
           className="border-4 border-secondary rounded-full"
         />
+      </section>
+
+      <section>
+        <h1 className="mb-2">Professional Experience</h1>
+
+        <Timeline>
+          <TimelineItem
+            title="Al Masaood LLC"
+            subtitle="Software Developer Intern – Summer 2025 "
+            position="first"
+          >
+            <div className="flex flex-row items-center">
+              <ul className="list-outside ms-3.5">
+                <li>
+                  Built and launched a React/SPFx timesheet tracker for 30+
+                  technicians, saving 1,500+ sheets weekly through
+                  SAP-integrated SharePoint
+                </li>
+                <li>
+                  Assisted development of a legal chatbot using FastAPI, React,
+                  and RAG, saving the legal team 8 hrs/wk
+                </li>
+                <li>
+                  Partnered with the insurance department on an app for vehicle
+                  inventory and insurance, handling data modeling and SharePoint
+                  API integration
+                </li>
+              </ul>
+
+              <Image
+                src="/images/experience/masaood.png"
+                alt="Al Masaood's Logo"
+                width={630}
+                height={630}
+                className="max-w-[20%] h-auto object-cover ms-8 hidden lg:block"
+              />
+            </div>
+          </TimelineItem>
+
+          <TimelineItem
+            title="Data Science for Sustainable Development"
+            subtitle="Student Developer – Fall 2024"
+            position="last"
+          >
+            <div className="flex flex-row items-center">
+              <ul className="list-outside ms-3.5">
+                <li>
+                  Built a statistics dashboard for the open-source{" "}
+                  <a
+                    href="https://redcoralmap.web.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Red-CORAL
+                  </a>{" "}
+                  crime visualization project, analyzing 1,200+ data points
+                  using React and Firebase
+                </li>
+                <li>
+                  Helped build a modular filtering system using logic
+                  predicates, enabling flexible data slicing and real-time
+                  geospatial visualization
+                </li>
+                <li>
+                  Participated in biweekly workshops focused on applied data
+                  science and professional development
+                </li>
+              </ul>
+
+              <Image
+                src="/images/experience/dssd.png"
+                alt="Data Science for Sustainable Development's Logo"
+                width={512}
+                height={512}
+                className="max-w-[20%] h-auto object-cover ms-8 hidden lg:block"
+              />
+            </div>
+          </TimelineItem>
+        </Timeline>
       </section>
 
       <section>
@@ -135,14 +214,16 @@ export default function Home() {
               the <b>value</b> my work brings to people.
             </p>
 
-            {/* TODO: make dynamic */}
-            <TimelineActivityList>
-              <TimelineActivity title="Flux" description="TODO" />
-              <TimelineActivity title="Mind Merge" description="TODO" />
-              <TimelineActivity title="FreeVoIP" description="TODO" />
-              <TimelineActivity title="Red Coral" description="TODO" />
-              <TimelineActivity title="Drippr" description="TODO" />
-            </TimelineActivityList>
+            {/* TODO: show and make dynamic */}
+            <div className="hidden">
+              <TimelineActivityList>
+                <TimelineActivity title="Flux" description="TODO" />
+                <TimelineActivity title="Mind Merge" description="TODO" />
+                <TimelineActivity title="FreeVoIP" description="TODO" />
+                <TimelineActivity title="Red Coral" description="TODO" />
+                <TimelineActivity title="Drippr" description="TODO" />
+              </TimelineActivityList>
+            </div>
           </TimelineItem>
         </Timeline>
       </section>
