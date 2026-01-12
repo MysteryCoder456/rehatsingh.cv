@@ -54,7 +54,7 @@ export const viewport: Viewport = {
 
 const navBarItems: { name: string; href: string; newTab?: boolean }[] = [
   { name: "Home", href: "/" },
-  { name: "Projects", href: "/coming-soon" },
+  { name: "Projects", href: "/projects" },
   {
     name: "Resume",
     href: "https://docs.rehatsingh.cv/resume.pdf",

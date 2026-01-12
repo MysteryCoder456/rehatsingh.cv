@@ -1,10 +1,9 @@
-import { NewspaperIcon, LinkIcon } from "lucide-react";
+import { LinkIcon, NewspaperIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -24,9 +23,8 @@ export function ProjectCard({
   imageSrc,
   projectHref,
 }: ProjectCardProps) {
-  // TODO: Enable when project page is live
-  // const projectName = title.toLowerCase().replace(/\s+/, "-");
-  const detailHref = "/coming-soon"; // `/projects/${projectName}`;
+  const projectId = title.toLowerCase().replace(/\s+/, "-");
+  const detailsHref = `/projects/${projectId}`;
 
   return (
     <Card className="pt-0 overflow-clip">
@@ -47,7 +45,7 @@ export function ProjectCard({
 
       <CardFooter className="flex-col lg:flex-row gap-2">
         <Button asChild className="w-full lg:flex-1">
-          <Link href={detailHref} className="no-underline">
+          <Link href={detailsHref} className="no-underline">
             <span className="inline-flex gap-2 items-center">
               <NewspaperIcon />
               Read More

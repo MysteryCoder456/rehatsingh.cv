@@ -1,5 +1,6 @@
-import { AlertCircleIcon } from "lucide-react";
+import { AlertCircleIcon, ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ProjectCard } from "@/components/projects";
 import {
   Timeline,
@@ -155,6 +156,12 @@ export default function Home() {
             imageSrc="/images/projects/freevoip.png"
             projectHref="https://github.com/MysteryCoder456/free-voip"
           />
+        </div>
+
+        <div className="text-base pt-6 w-full text-center">
+          <Link href="/projects" className="inline-flex items-center">
+            See All <ChevronRightIcon className="w-[1em]" />
+          </Link>
         </div>
       </section>
 
