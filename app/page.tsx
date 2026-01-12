@@ -1,6 +1,7 @@
-import { AlertCircleIcon, ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Hero from "@/components/hero";
 import { ProjectCard } from "@/components/projects";
 import {
   Timeline,
@@ -8,56 +9,12 @@ import {
   TimelineActivityList,
   TimelineItem,
 } from "@/components/timeline";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function Home() {
-  const photoSize = 300;
-
   return (
     <main className="h-full flex flex-col gap-8">
-      <Alert variant="warning">
-        <AlertCircleIcon />
-        <AlertTitle>What's going on?</AlertTitle>
-        <AlertDescription>
-          <p>
-            I'm currently revamping my entire personal site, so several parts of
-            this site are incomplete. Click{" "}
-            <a
-              href="https://old.rehatsingh.cv"
-              target="_blank"
-              rel="noreferrer"
-            >
-              here
-            </a>{" "}
-            to see my old one.
-          </p>
-        </AlertDescription>
-      </Alert>
-
-      <section className="flex flex-col-reverse gap-4 md:flex-row justify-between items-center">
-        <div className="flex flex-col gap-2 max-w-[50%] text-center md:text-start">
-          <h1>Rehatbir Singh</h1>
-          <ul className="text-muted-foreground font-medium text-lg list-inside">
-            <li>
-              Student @ <a href="https://wisc.edu">UW-Madison</a>
-            </li>
-            <li>Fullstack engineer with a focus in backend systems</li>
-            <li>
-              Currently working on{" "}
-              <a href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564">
-                Flux
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <Image
-          src="/images/pingy.png"
-          alt="Picture of Rehatbir"
-          width={photoSize}
-          height={photoSize}
-          className="border-4 border-secondary rounded-full"
-        />
+      <section className="h-screen -mt-18">
+        <Hero />
       </section>
 
       <section>
