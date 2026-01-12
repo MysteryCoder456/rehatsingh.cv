@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       <span
-        className={`absolute bottom-4 left-[50%] translate-x-[-50%] text-base text-muted-foreground flex flex-col items-center transition-opacity ${cn(!showScrollLabel && "opacity-0")}`}
+        className={`absolute bottom-0 left-[50%] translate-x-[-50%] text-base text-muted-foreground flex flex-col items-center transition-opacity ${cn(showScrollLabel ? "opacity-70" : "opacity-0")}`}
       >
         Scroll
         <ChevronDownIcon className="w-[1em] animate-bounce" />

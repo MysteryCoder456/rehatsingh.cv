@@ -160,4 +160,8 @@
   ol {
     @apply list-decimal;
   }
+
+  section {
+    @apply mt-8;
+  }
 }

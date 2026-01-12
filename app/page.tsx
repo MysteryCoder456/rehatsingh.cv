@@ -13,7 +13,7 @@ import {
 export default function Home() {
   return (
     <main className="h-full flex flex-col gap-8">
-      <section className="h-screen -mt-18">
+      <section className="h-lvh -mt-18">
         <Hero />
       </section>
 
