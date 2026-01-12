@@ -147,13 +147,13 @@ export default function Home() {
             title="Flux"
             description="Networking for student entrepreneurs"
             imageSrc="/images/projects/flux.png"
-            href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564"
+            projectHref="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564"
           />
           <ProjectCard
             title="FreeVoIP"
             description="Decentralized peer-2-peer video calling"
             imageSrc="/images/projects/freevoip.png"
-            href="https://github.com/MysteryCoder456/free-voip"
+            projectHref="https://github.com/MysteryCoder456/free-voip"
           />
         </div>
       </section>
