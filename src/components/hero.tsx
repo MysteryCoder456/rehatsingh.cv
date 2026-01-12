@@ -29,7 +29,7 @@ export default function Hero() {
               Fullstack engineer and entrepreneur, interested in backend systems
               and infrastructure
             </li>
-            <li>Avid beliver in simplicity</li>
+            <li>Avid believer in simplicity</li>
             <li>
               Currently growing my startup,{" "}
               <a href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564">
