@@ -32,7 +32,11 @@ export default function Hero() {
             <li>Avid believer in simplicity</li>
             <li>
               Currently growing my startup,{" "}
-              <a href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564">
+              <a
+                href="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Flux
               </a>
             </li>
