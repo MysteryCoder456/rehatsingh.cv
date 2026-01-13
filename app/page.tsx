@@ -1,8 +1,8 @@
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import FeaturedProjects from "@/components/featured-projects";
 import Hero from "@/components/hero";
-import { ProjectCard } from "@/components/projects";
 import {
   Timeline,
   TimelineActivity,
@@ -99,20 +99,8 @@ export default function Home() {
       <section>
         <h1 className="mb-4">Featured Projects</h1>
 
-        {/* TODO: make dynamic */}
         <div className="grid sm:grid-cols-2 grid-cols-1 lg:gap-8 gap-4">
-          <ProjectCard
-            title="Flux"
-            description="Networking for student entrepreneurs"
-            imageSrc="/images/projects/flux.png"
-            projectHref="https://apps.apple.com/us/app/flux-student-startup-network/id6742727564"
-          />
-          <ProjectCard
-            title="FreeVoIP"
-            description="Decentralized peer-2-peer video calling"
-            imageSrc="/images/projects/freevoip.png"
-            projectHref="https://github.com/MysteryCoder456/free-voip"
-          />
+          <FeaturedProjects />
         </div>
 
         <div className="text-base pt-6 w-full text-center">

@@ -9,33 +9,40 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export type ProjectCardProps = {
   title: string;
+  slug?: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
   projectHref: string;
 };
 
 export function ProjectCard({
   title,
+  slug,
   description,
   imageSrc,
   projectHref,
 }: ProjectCardProps) {
-  const projectId = title.toLowerCase().replace(/\s+/, "-");
+  const projectId = slug ? slug : title.toLowerCase().replace(/\s+/, "-");
   const detailsHref = `/projects/${projectId}`;
 
   return (
     <Card className="pt-0 overflow-clip">
       <CardHeader className="p-0">
-        <Image
-          src={imageSrc}
-          width={1280}
-          height={720}
-          alt={`An image showcasing the project ${title}`}
-          className="aspect-video"
-        />
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            width={1280}
+            height={720}
+            alt={`An image showcasing the project ${title}`}
+            className="aspect-video"
+          />
+        ) : (
+          <Skeleton className="w-full aspect-video rounded-none" />
+        )}
 
         <div className="px-6 pt-2">
           <CardTitle className="text-xl">{title}</CardTitle>
