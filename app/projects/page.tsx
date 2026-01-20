@@ -36,17 +36,23 @@ async function ProjectsGrid() {
 export default function Projects() {
   return (
     <main className="h-full flex flex-col gap-8">
-      <h1>Projects</h1>
+      <section>
+        <h1 className="mb-2">Projects</h1>
+        <p className="text-muted-foreground mb-8">
+          A collection of my work, ranging from personal projects to production
+          software deployed at startups and companies.
+        </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
-        <Suspense
-          fallback={[...Array(2).keys()].map((i) => (
-            <ProjectSkeleton key={i} />
-          ))}
-        >
-          <ProjectsGrid />
-        </Suspense>
-      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
+          <Suspense
+            fallback={[...Array(2).keys()].map((i) => (
+              <ProjectSkeleton key={i} />
+            ))}
+          >
+            <ProjectsGrid />
+          </Suspense>
+        </div>
+      </section>
     </main>
   );
 }
