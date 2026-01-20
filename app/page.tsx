@@ -1,8 +1,10 @@
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import FeaturedProjects from "@/components/featured-projects";
 import Hero from "@/components/hero";
+import { ProjectSkeleton } from "@/components/projects";
 import {
   Timeline,
   TimelineActivity,
@@ -100,7 +102,13 @@ export default function Home() {
         <h1 className="mb-4">Featured Projects</h1>
 
         <div className="grid sm:grid-cols-2 grid-cols-1 lg:gap-8 gap-4">
-          <FeaturedProjects />
+          <Suspense
+            fallback={[...Array(2).keys()].map((i) => (
+              <ProjectSkeleton key={i} />
+            ))}
+          >
+            <FeaturedProjects />
+          </Suspense>
         </div>
 
         <div className="text-base pt-6 w-full text-center">

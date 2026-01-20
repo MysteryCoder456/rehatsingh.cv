@@ -71,3 +71,16 @@ export function ProjectCard({
     </Card>
   );
 }
+
+export function ProjectSkeleton() {
+  return (
+    <div className="flex flex-col gap-6">
+      <Skeleton className="w-full aspect-video rounded-xl" />
+      <div className="flex flex-col gap-1.5">
+        <Skeleton className="w-21 h-3.5 rounded-xl mb-2" />
+        <Skeleton className="w-full h-3 rounded-xl" />
+        <Skeleton className="w-[40%] h-3 rounded-xl" />
+      </div>
+    </div>
+  );
+}
