@@ -17,7 +17,7 @@ export default function WhatsGoingOn() {
   return (
     <div
       className={cn(
-        "fixed w-full left-0 right-0 transition-opacity",
+        "fixed w-full left-0 right-0 transition-opacity z-5",
         hidden && "opacity-0 pointer-events-none",
       )}
     >
