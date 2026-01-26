@@ -4,8 +4,7 @@ import { ProjectCard, ProjectSkeleton } from "@/components/projects";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/utils";
 
-const PROJECTS_QUERY =
-  "*[_type == 'project' && defined(slug.current)]|order(completedOn desc, startedOn){_id, title, slug, description, image, projectUrl }";
+const PROJECTS_QUERY = `*[_type == "project" && defined(slug.current)]|order(completedOn desc, startedOn){_id, title, slug, description, image, projectUrl }`;
 
 async function ProjectsGrid() {
   const projects = await client.fetch<SanityDocument[]>(

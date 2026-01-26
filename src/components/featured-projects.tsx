@@ -3,8 +3,7 @@ import { ProjectCard } from "@/components/projects";
 import { client } from "@/sanity/client";
 import { urlFor } from "@/sanity/utils";
 
-const PROJECTS_QUERY =
-  "*[_type == 'project' && defined(slug.current) && isFeatured]|order(completedOn desc, startedOn){_id, title, slug, description, image, projectUrl }";
+const PROJECTS_QUERY = `*[_type == "project" && defined(slug.current) && isFeatured]|order(completedOn desc, startedOn){_id, title, slug, description, image, projectUrl }`;
 
 export default async function FeaturedProjects() {
   const projects = await client.fetch<SanityDocument[]>(
