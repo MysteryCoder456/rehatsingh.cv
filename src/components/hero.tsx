@@ -16,7 +16,7 @@ export default function Hero() {
     Icon: React.ComponentType<{ size: number; strokeWidth: number }>;
     href: string;
   }[] = [
-    { Icon: MailIcon, href: "mailto:rehatbir.singh@gmail.com" },
+    { Icon: MailIcon, href: "mailto:me@rehatsingh.cv" },
     {
       Icon: LinkedinIcon,
       href: "https://www.linkedin.com/in/rehatbir-singh-4805ba193/",
