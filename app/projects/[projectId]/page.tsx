@@ -35,11 +35,7 @@ export default async function ProjectDetails({
 
           <div className="flex flex-row gap-1">
             {project.technologies.map((tech: string) => (
-              <Badge
-                key={tech}
-                variant="outline"
-                className="border-accent-foreground hover:bg-secondary transition-colors cursor-default"
-              >
+              <Badge key={tech} variant="outline">
                 {tech}
               </Badge>
             ))}

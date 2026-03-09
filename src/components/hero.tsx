@@ -41,7 +41,9 @@ export default function Hero() {
     <>
       <div className="flex flex-col-reverse gap-4 md:gap-8 xl:gap-16 md:flex-row justify-center md:justify-between items-center h-full">
         <div className="flex flex-col gap-2">
-          <h1 className="text-center md:text-start">Rehatbir Singh</h1>
+          <h1 className="text-primary text-center md:text-start">
+            Rehatbir Singh
+          </h1>
 
           <ul className="text-muted-foreground font-medium text-lg list-outside ps-4 mx-4 sm:mx-12 md:mx-0">
             <li>
