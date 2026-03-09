@@ -49,8 +49,8 @@ export default function Hero() {
               <a href="https://wisc.edu">UW-Madison</a> at Madison, WI
             </li>
             <li>
-              Fullstack engineer and entrepreneur, interested in backend systems
-              and infrastructure
+              Fullstack engineer and entrepreneur, interested in distributed
+              systems
             </li>
             <li>Avid believer in simplicity</li>
             <li>
