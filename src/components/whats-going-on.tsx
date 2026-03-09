@@ -25,7 +25,7 @@ export default function WhatsGoingOn() {
         <AlertCircleIcon />
         <AlertTitle>What's going on?</AlertTitle>
         <AlertDescription>
-          <p>
+          <span>
             I'm currently revamping my entire personal site, so several parts of
             this site are incomplete. Click{" "}
             <a
@@ -36,7 +36,7 @@ export default function WhatsGoingOn() {
               here
             </a>{" "}
             to see my old one.
-          </p>
+          </span>
         </AlertDescription>
 
         <button
