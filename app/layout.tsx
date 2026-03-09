@@ -3,12 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import AppearanceSwitcher from "@/components/appearance-switcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           src="https://umami.rehatsingh.cv/script.js"
@@ -83,42 +85,46 @@ export default function RootLayout({
         <link rel="canonical" href="https://rehatsingh.cv" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationMenu className="fixed left-1/2 -translate-x-1/2 py-3 bg-background border-b border-b-secondary z-50">
-          <NavigationMenuList className="flex-wrap w-screen gap-4">
-            {navBarItems.map((item) => (
-              <NavigationMenuItem key={item.name}>
-                {item.href.startsWith("http") ? (
-                  <NavigationMenuLink
-                    href={item.href}
-                    target={item.newTab ? "_blank" : "_self"}
-                    className="font-semibold not-italic no-underline"
-                  >
-                    {item.name}
-                  </NavigationMenuLink>
-                ) : (
-                  <NavigationMenuLink asChild>
-                    <Link
+        <ThemeProvider attribute="class" enableSystem enableColorScheme>
+          <NavigationMenu className="fixed left-1/2 -translate-x-1/2 py-3 bg-background border-b border-b-secondary z-50">
+            <NavigationMenuList className="flex-wrap w-screen gap-4">
+              {navBarItems.map((item) => (
+                <NavigationMenuItem key={item.name}>
+                  {item.href.startsWith("http") ? (
+                    <NavigationMenuLink
                       href={item.href}
                       target={item.newTab ? "_blank" : "_self"}
                       className="font-semibold not-italic no-underline"
                     >
                       {item.name}
-                    </Link>
-                  </NavigationMenuLink>
-                )}
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+                    </NavigationMenuLink>
+                  ) : (
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={item.href}
+                        target={item.newTab ? "_blank" : "_self"}
+                        className="font-semibold not-italic no-underline"
+                      >
+                        {item.name}
+                      </Link>
+                    </NavigationMenuLink>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
 
-        {/* Create a responsive center element for main content */}
-        <div className="grid grid-cols-12">
-          <div className="px-4 md:px-0 py-18 min-h-screen col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
-            {children}
+          <AppearanceSwitcher />
+
+          {/* Create a responsive center element for main content */}
+          <div className="grid grid-cols-12">
+            <div className="px-4 md:px-0 py-18 min-h-screen col-span-12 md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 2xl:col-span-6 2xl:col-start-4">
+              {children}
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );

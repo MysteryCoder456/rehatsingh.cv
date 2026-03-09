@@ -87,7 +87,7 @@ export default function Hero() {
           alt="Picture of Rehatbir"
           width={photoSize}
           height={photoSize}
-          className="border-4 border-secondary rounded-full"
+          className="border-3 rounded-full"
         />
       </div>
 
