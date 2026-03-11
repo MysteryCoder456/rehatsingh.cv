@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function FloatingBallBackground({
   colors,
@@ -14,7 +14,31 @@ export default function FloatingBallBackground({
 
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
-  const [phase, setPhase] = useState<"initial" | "loop">("initial");
+
+  const keyframes = useMemo<string[][][]>(() => {
+    return colors.map((_, i) => {
+      const angle = (2 * Math.PI * i) / count;
+      const baseX = width / 2 + Math.cos(angle) * radius;
+      const baseY = height / 2 + Math.sin(angle) * radius;
+
+      const randomOffset = () => (Math.random() - 0.5) * 2 * radius;
+
+      const keyframesX = Array.from(
+        { length: keyframeCount },
+        () => `${baseX + randomOffset()}px`,
+      );
+      const keyframesY = Array.from(
+        { length: keyframeCount },
+        () => `${baseY + randomOffset()}px`,
+      );
+
+      // Close the loop
+      keyframesX.push(keyframesX[0]);
+      keyframesY.push(keyframesY[0]);
+
+      return [keyframesX, keyframesY];
+    });
+  }, [colors, count, width, height]);
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -32,29 +56,12 @@ export default function FloatingBallBackground({
         <title>Background</title>
 
         {colors.map((color, i) => {
-          const angle = (2 * Math.PI * i) / count;
-          const baseX = width / 2 + Math.cos(angle) * radius;
-          const baseY = height / 2 + Math.sin(angle) * radius;
-
-          const randomOffset = () => (Math.random() - 0.5) * 2 * radius;
-
-          const keyframesX = Array.from(
-            { length: keyframeCount },
-            () => `${baseX + randomOffset()}px`,
-          );
-          const keyframesY = Array.from(
-            { length: keyframeCount },
-            () => `${baseY + randomOffset()}px`,
-          );
-
-          // Close the loop
-          keyframesX.push(keyframesX[0]);
-          keyframesY.push(keyframesY[0]);
+          const [keyframesX, keyframesY] = keyframes[i];
 
           return (
             <motion.circle
               // biome-ignore lint/suspicious/noArrayIndexKey: it's fine
-              key={i}
+              key={`${width}_${height}_${i}`}
               r={radius}
               fill={color}
               initial={{ scale: 0 }}
