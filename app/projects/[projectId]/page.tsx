@@ -2,6 +2,7 @@ import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import type { SanityDocument } from "next-sanity";
 import { PortableText } from "next-sanity";
+import FloatingBallBackground from "@/components/floating-balls-background";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { client } from "@/sanity/client";
@@ -23,52 +24,56 @@ export default async function ProjectDetails({
   const imageSrc = imageUrl?.width(1280).height(720).url();
 
   return (
-    <main className="h-full flex flex-col gap-8">
-      <section className="flex flex-row max-h-44 justify-stretch">
-        <div className="gap-4 flex flex-col flex-1">
-          <div>
-            <h1 className="text-5xl">{project.title}</h1>
-            <p className="text-xl text-muted-foreground line-clamp-1">
-              {project.description}
-            </p>
+    <>
+      <FloatingBallBackground colors={project.colors} />
+
+      <main className="h-full flex flex-col gap-8">
+        <section className="flex flex-row max-h-44 justify-stretch">
+          <div className="gap-4 flex flex-col flex-1">
+            <div>
+              <h1 className="text-5xl">{project.title}</h1>
+              <p className="text-xl text-muted-foreground line-clamp-1">
+                {project.description}
+              </p>
+            </div>
+
+            <div className="flex flex-row gap-1">
+              {project.technologies.map((tech: string) => (
+                <Badge key={tech} variant="outline">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+
+            <Button asChild className="max-w-max">
+              <a
+                href={project.projectUrl}
+                target="_blank"
+                className="no-underline"
+              >
+                <span className="inline-flex gap-2 items-center">
+                  <LinkIcon />
+                  Check Out
+                </span>
+              </a>
+            </Button>
           </div>
 
-          <div className="flex flex-row gap-1">
-            {project.technologies.map((tech: string) => (
-              <Badge key={tech} variant="outline">
-                {tech}
-              </Badge>
-            ))}
-          </div>
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              width={1280}
+              height={720}
+              alt={`An image showcasing the project ${project.title}`}
+              className="w-auto h-full rounded-lg hidden sm:block"
+            />
+          )}
+        </section>
 
-          <Button asChild className="max-w-max">
-            <a
-              href={project.projectUrl}
-              target="_blank"
-              className="no-underline"
-            >
-              <span className="inline-flex gap-2 items-center">
-                <LinkIcon />
-                Check Out
-              </span>
-            </a>
-          </Button>
-        </div>
-
-        {imageSrc && (
-          <Image
-            src={imageSrc}
-            width={1280}
-            height={720}
-            alt={`An image showcasing the project ${project.title}`}
-            className="w-auto h-full rounded-lg hidden sm:block"
-          />
-        )}
-      </section>
-
-      <section>
-        <PortableText value={project.body} />
-      </section>
-    </main>
+        <section>
+          <PortableText value={project.body} />
+        </section>
+      </main>
+    </>
   );
 }

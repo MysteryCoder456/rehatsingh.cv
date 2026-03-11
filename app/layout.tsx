@@ -4,13 +4,13 @@ import "./globals.css";
 import Link from "next/link";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
+import AppearanceSwitcher from "@/components/appearance-switcher";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import AppearanceSwitcher from "@/components/appearance-switcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
