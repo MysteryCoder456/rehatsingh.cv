@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export default function FloatingBallBackground({
   colors,
@@ -11,18 +12,29 @@ export default function FloatingBallBackground({
   const count = colors.length;
   const keyframeCount = 8;
 
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [phase, setPhase] = useState<"initial" | "loop">("initial");
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+
+    window.onresize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+  }, []);
+
   return (
-    <div
-      className="pointer-events-none fixed inset-0 overflow-hidden -z-50 opacity-8"
-      style={{ filter: `blur(${radius}px)` }}
-    >
+    <div className="pointer-events-none fixed inset-0 overflow-hidden -z-50 opacity-8 blur-3xl">
       <svg className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2">
         <title>Background</title>
 
         {colors.map((color, i) => {
           const angle = (2 * Math.PI * i) / count;
-          const baseX = window.innerWidth / 2 + Math.cos(angle) * radius;
-          const baseY = window.innerHeight / 2 + Math.sin(angle) * radius;
+          const baseX = width / 2 + Math.cos(angle) * radius;
+          const baseY = height / 2 + Math.sin(angle) * radius;
 
           const randomOffset = () => (Math.random() - 0.5) * 2 * radius;
 
@@ -41,17 +53,31 @@ export default function FloatingBallBackground({
 
           return (
             <motion.circle
-              key={color}
+              // biome-ignore lint/suspicious/noArrayIndexKey: it's fine
+              key={i}
               r={radius}
               fill={color}
+              initial={{ scale: 0 }}
               animate={{
                 cx: keyframesX,
                 cy: keyframesY,
+                scale: 1,
               }}
               transition={{
-                duration: 45,
-                repeat: Infinity,
-                ease: "easeInOut",
+                cx: {
+                  duration: 90,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+                cy: {
+                  duration: 90,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
+                scale: {
+                  duration: 15,
+                  ease: "easeOut",
+                },
               }}
             />
           );
