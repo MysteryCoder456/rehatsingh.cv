@@ -37,7 +37,7 @@ export default function Projects() {
     <main className="h-full flex flex-col gap-8">
       <section>
         <h1 className="mb-2">Projects</h1>
-        <p className="text-muted-foreground mb-8">
+        <p className="text-muted mb-8">
           A collection of my work, ranging from personal projects to production
           software deployed at startups and companies.
         </p>

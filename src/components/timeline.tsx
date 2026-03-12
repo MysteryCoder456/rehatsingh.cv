@@ -91,7 +91,7 @@ export function TimelineActivity({
         {description && (
           <>
             <br />
-            <span className="text-muted-foreground">{description}</span>
+            <span className="text-muted">{description}</span>
           </>
         )}
       </div>

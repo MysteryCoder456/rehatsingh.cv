@@ -32,7 +32,7 @@ export default async function ProjectDetails({
           <div className="gap-4 flex flex-col flex-1">
             <div>
               <h1 className="text-5xl">{project.title}</h1>
-              <p className="text-xl text-muted-foreground line-clamp-1">
+              <p className="text-xl text-muted line-clamp-1">
                 {project.description}
               </p>
             </div>

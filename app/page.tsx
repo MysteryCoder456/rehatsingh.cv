@@ -45,7 +45,7 @@ export default function Home() {
 
         <section>
           <h1 className="mb-2">My Story</h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted">
             How I've evolved as a developer over the years.
           </p>
 
