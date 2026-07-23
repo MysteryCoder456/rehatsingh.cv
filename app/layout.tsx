@@ -36,16 +36,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    url: "https://rehatsingh.cv",
+    url: "https://rehatsingh.com",
     title: "Rehatbir Singh",
     description: "Student at UW-Madison, fullstack engineer, and avid learner.",
-    images: { url: "https://rehatsingh.cv/images/pingy.png" },
+    images: { url: "https://rehatsingh.com/images/pingy.png" },
   },
   twitter: {
     card: "summary_large_image",
     title: "Rehatbir Singh",
     description: "Student at UW-Madison, fullstack engineer, and avid learner.",
-    images: { url: "https://rehatsingh.cv/images/pingy.png" },
+    images: { url: "https://rehatsingh.com/images/pingy.png" },
   },
 };
 
@@ -59,7 +59,7 @@ const navBarItems: { name: string; href: string; newTab?: boolean }[] = [
   { name: "Projects", href: "/projects" },
   {
     name: "Resume",
-    href: "https://docs.rehatsingh.cv/resume.pdf",
+    href: "https://docs.rehatsingh.com/resume.pdf",
     newTab: true,
   },
   {
@@ -78,11 +78,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script
-          src="https://umami.rehatsingh.cv/script.js"
+          src="https://umami.rehatsingh.com/script.js"
           data-website-id="6d05defe-708b-41d7-91c1-40a55ec94f3d"
           strategy="afterInteractive"
         />
-        <link rel="canonical" href="https://rehatsingh.cv" />
+        <link rel="canonical" href="https://rehatsingh.com" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

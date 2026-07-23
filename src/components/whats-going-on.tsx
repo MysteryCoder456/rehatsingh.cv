@@ -29,7 +29,7 @@ export default function WhatsGoingOn() {
             I'm currently revamping my entire personal site, so several parts of
             this site are incomplete. Click{" "}
             <a
-              href="https://old.rehatsingh.cv"
+              href="https://old.rehatsingh.com"
               target="_blank"
               rel="noreferrer"
             >
